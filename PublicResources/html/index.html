@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/index.css">
+    <title>Movie Collection</title>
+</head>
+<body>
+    <h1>Movie Collection</h1>
+
+    <div class="container">
+        <h2>Add a movie</h2>
+        <form id="add-movie-form" method="POST" action="/add-movie">
+            <div class="row">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="movie-title" placeholder="Title of the movie..">
+            </div>
+            
+            
+            <div class="row">
+                <label for="p-rating">Personal rating (0-10):</label>
+                <input type="range" id="p-rating" name="peronal-rating" placeholder="5" min="0" max="10">
+            </div>
+            
+            <div class="row">
+                <label for="f-watched">First watched:</label>
+                <input type="date" id="f-watched" name="first-watched">
+            </div>
+            
+            <div class="row">
+                <label for="counter">Watch counter:</label>
+                <input type="number" id="counter" name="wathed-counter" placeholder="1" min="1" max="500">
+            </div>
+
+            <input type="submit" value="Add movie to collection">
+        </form>
+    </div>
+
+    <div class="container">
+        <h2>Update a movie</h2>
+        <form id="update-movie-form" method="POST" action="/update-movie">
+            <div class="row">
+                <label for="s-title">Movie title:</label>
+                <input type="search" id="s-title" name="search-title" placeholder="Search movie title..">
+                <button>Search</button>
+            </div>
+            
+            <div class="row">
+                <label for="upd-rating">Updated personal rating (0-10):</label>
+                <input type="range" id="upd-rating" name="updated-rating" placeholder="5" min="0" max="10">
+            </div>
+            
+            <div class="row">
+                <label for="uod-counter">Updated watch counter:</label>
+                <input type="number" id="upd-counter" name="updated-counter" placeholder="1" min="1" max="500">
+            </div>
+
+            <input type="submit" value="Update">
+        </form>
+    </div>
+
+    <script src="../js/client.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+    "movies": [
+        {
+            "title": "Interstellar",
+            "personalRating": 9,
+            "dateFirstWatched": "1975-08-19T23:15:30.000Z",
+            "watchCounter": 5
+        }
+    ]
+}

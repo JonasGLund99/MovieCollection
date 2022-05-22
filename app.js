@@ -1,4 +1,6 @@
+const fs = require('fs');
 const http = require('http');
+const path = require('path');
 const port = 3000;
 
 const server = http.createServer(requestHandler);
@@ -44,10 +46,18 @@ function processReq(req, res) {
         case "GET": {
             switch (url) {
                 case "/":
-                    console.log(url);
-                    res.writeHead(200, { "Content-Type": "text/html" });
-                    res.write("/PublicResources/html/index.html");
-                    res.end();
+                    const path = "/PublicResources/html/index.html"
+                    fs.readFileSync(path, (err, data) => {
+                        if (err) {
+                            console.log(err);
+                            res.writeHead(404, { "Content-Type": "text/html" });
+                            res.write("404 - File not found");
+                        } else {
+                            res.writeHead(200, { "Content-Type": "text/html" });
+                            res.write(data);
+                            res.end('\n');
+                        }
+                    });
                     break;
             
                 default:
@@ -55,21 +65,12 @@ function processReq(req, res) {
             }
             break;
         }
-    }
-
-
-    switch (key) {
-        case value:
-            
-            break;
-    
         default:
             break;
     }
 }
 
 function startServer() {
-/* start the server */
     server.listen(port, () => {
         console.log(`Server running at http://localhost:${port}/`);
     });

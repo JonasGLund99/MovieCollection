@@ -5,6 +5,18 @@
             "personalRating": 9,
             "dateFirstWatched": "1975-08-19T23:15:30.000Z",
             "watchCounter": 5
+        },
+        {
+            "title": "Hejsa",
+            "personalRating": "4",
+            "dateFirstWatched": "2022-05-25",
+            "watchCounter": "3"
+        },
+        {
+            "title": "Test1234",
+            "personalRating": "3",
+            "dateFirstWatched": "2022-05-13",
+            "watchCounter": "10"
         }
     ]
 }
